@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+</head>
+<body>
+
+    <h2>User's Feedback:</h2>
+    <ul id="feedbackList"></ul>
+
+    <script>
+        var userDataArray = JSON.parse(localStorage.getItem('userData')) || [];
+
+        function displayFeedback() {
+            var feedbackList = document.getElementById('feedbackList');
+            feedbackList.innerHTML = '';
+
+            userDataArray.forEach(function(user) {
+                var listItem = document.createElement('li');
+                listItem.textContent =user.feedback;
+                feedbackList.appendChild(listItem);
+            });
+        }
+        displayFeedback();
+    </script>
+
+</body>
+</html>
