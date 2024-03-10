@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main_style.css">
+    <title>Luggage Tracking</title>
+    <div id="header">
+        <h2><a href = "login.html">
+            <img src="unite.jpg" alt="Logo">
+            <span class="text">UNITED AIRLINES</span>
+        </h2></a>
+    </div>
+</head>
+<body>
+    <div>
+        <h2>Welcome, User123!</h2>
+        <p>Your luggage current location:</p>
+        <div class="tracking-info">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.713027920757!2d-71.07330922420635!3d42.369954734476856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37095ca836219%3A0xb282efa41441587c!2sHult%20International%20Business%20School!5e0!3m2!1sen!2sus!4v1709351913222!5m2!1sen!2sus" 
+                    class="map-frame" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <p class="description">Your luggage is currently on its way to your destination.</p>
+        </div>
+    </div>
+    <p id="link" onclick="toggleDropdown()">See all updates &#9660;</p>
+
+    <div id="dropdownContent" class="dropdown-content">
+        <!-- Updates will be appended here -->
+    </div>
+    
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            displayUpdates();
+        };
+        function updateClicked() {
+            closeDropdown();
+        }
+    </script>
+</body>
+</html>
